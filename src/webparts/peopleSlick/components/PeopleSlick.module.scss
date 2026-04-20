@@ -1,0 +1,74 @@
+@import '~@fluentui/react/dist/sass/References.scss';
+
+.peopleSlick {
+  overflow: hidden;
+  background-color: #ffffff;
+  color: #252525;
+  min-height: var(--minHeight);
+  font-size: 16px;
+  font-family: var(--fontFamilyCustomFont1300, var(--fontFamilyBase));
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 3px;
+  }
+
+  .webpartName {
+    font-weight: var(--fontWeightSemibold);
+    font-size: var(--fontSizeHero700);
+    font-family: var(--fontFamilyCustomFont1300, var(--fontFamilyBase));
+    text-align: center;
+  }
+
+  .mainContainer {
+    .carousalItem {
+      position: relative;
+      height: 265px;
+      padding: 5px;
+
+      .title {
+        font-weight: var(--fontWeightSemibold);
+        margin: 5px 0;
+        font-family: var(--fontFamilyCustomFont1300, var(--fontFamilyBase));
+        text-align: center;
+      }
+
+      .description {
+        opacity: 0.8;
+        margin: 0px;
+        text-align: center;
+
+      }
+
+       .office {
+        opacity: 0.5;
+        margin: 0px;
+        text-align: center;
+
+      }
+
+      .profile img {
+        margin: auto;
+        border-radius: var(--borderRadius);
+      }
+
+      .viewMoreP {
+        text-align: center;
+        margin: auto;
+      }
+
+      .viewMore {
+        border: none;
+        line-height: 5px;
+        padding: 10px 20px;
+        background-color: #0063AC;
+        color: white;
+
+       
+        cursor: pointer;
+        text-align: center;
+      }
+    }
+  }
+}
