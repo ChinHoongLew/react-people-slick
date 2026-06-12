@@ -24,12 +24,12 @@
   .mainContainer {
     .carousalItem {
       position: relative;
-      height: 265px;
-      padding: 5px;
+      min-height: var(--minHeightCarousell);
+      padding: 0px;
 
       .title {
         font-weight: var(--fontWeightSemibold);
-        margin: 5px 0;
+        margin: 0px;
         font-family: var(--fontFamilyCustomFont1300, var(--fontFamilyBase));
         text-align: center;
       }
@@ -65,9 +65,52 @@
         background-color: #0063AC;
         color: white;
 
-       
+
         cursor: pointer;
         text-align: center;
+      }
+
+      .reactionContainer {
+        display: flex;
+        gap: 6px;
+        justify-content: center;
+        flex-wrap: wrap;
+       
+      }
+
+      .reactionBtn {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        background: #f3f2f1;
+        border: 1px solid #d2d0ce;
+        border-radius: 16px;
+        padding: 3px 10px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background 0.15s, border-color 0.15s;
+        line-height: 1.4;
+
+        &:hover:not(:disabled) {
+          background: #edebe9;
+          border-color: #0063AC;
+        }
+
+        &:disabled {
+          opacity: 0.6;
+          cursor: default;
+        }
+      }
+
+      .reactionBtnActive {
+        background: #deecf9;
+        border-color: #0063AC;
+      }
+
+      .reactionCount {
+        font-size: 12px;
+        font-weight: 600;
+        color: #323130;
       }
     }
   }

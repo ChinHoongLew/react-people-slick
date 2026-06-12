@@ -21,6 +21,7 @@ export interface IPeopleSlickWebPartProps {
   UseRootSite: boolean;
    slickMode: string;
    minHeight:number;
+   minHeightCarousell:number;
    photoWidth:number;
   showDots: boolean;
   autoplaySpeed: number;
@@ -41,6 +42,8 @@ infinite:boolean;
   displayJobTitle:boolean;
  displayOffice:boolean;
  borderRadius:number;
+ enableReactions:boolean;
+ enableTeams:boolean;
 }
 export default class PeopleSlickWebPart extends BaseClientSideWebPart<IPeopleSlickWebPartProps> {
   private _isDarkTheme: boolean = false;
@@ -65,6 +68,7 @@ export default class PeopleSlickWebPart extends BaseClientSideWebPart<IPeopleSli
         slickMode: this.properties.slickMode,
         showDots: this.properties.showDots,
         minHeight: this.properties.minHeight,
+        minHeightCarousell: this.properties.minHeightCarousell,
         photoWidth:this.properties.photoWidth,
         autoplaySpeed: this.properties.autoplaySpeed,
         speed: this.properties.speed,
@@ -84,6 +88,8 @@ export default class PeopleSlickWebPart extends BaseClientSideWebPart<IPeopleSli
           displayJobTitle:this.properties.displayJobTitle,
         displayOffice:this.properties.displayOffice,
         borderRadius:this.properties.borderRadius,
+        enableReactions:this.properties.enableReactions,
+        enableTeams:this.properties.enableTeams
       }
     );
 
@@ -200,9 +206,15 @@ export default class PeopleSlickWebPart extends BaseClientSideWebPart<IPeopleSli
                 }),
 
                 PropertyPaneSlider("minHeight", {
-                  label: "minimum height (100-500)",
+                  label: "minimum height (100-600)",
                   min: 100,
-                  max: 500,
+                  max: 600,
+                 
+                }),
+                  PropertyPaneSlider("minHeightCarousell", {
+                  label: "minimum height Carousell (100-600)",
+                  min: 100,
+                  max: 600,
                  
                 }),
 
@@ -319,6 +331,17 @@ export default class PeopleSlickWebPart extends BaseClientSideWebPart<IPeopleSli
                   onText: "Yes",
                   }),
 
+                  PropertyPaneToggle("enableReactions", {
+                  label: "Enable Reactions (👋 👏 🥳)?",
+                  offText: "No",
+                  onText: "Yes",
+                  }),
+
+                  PropertyPaneToggle("enableTeams", {
+                  label: "Enable Teams Integration?",
+                  offText: "No",
+                  onText: "Yes",
+                  }),
 
               ]
 

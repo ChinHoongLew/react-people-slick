@@ -13,6 +13,7 @@ export interface IPeopleSlickProps {
   UseRootSite: boolean;
    slickMode: string;
    minHeight:number;
+   minHeightCarousell:number;
    photoWidth:number;
   showDots: boolean;
   autoplaySpeed: number;
@@ -35,4 +36,6 @@ infinite:boolean;
    displayJobTitle:boolean;
    displayOffice:boolean;
    borderRadius:number;
+   enableReactions:boolean;
+   enableTeams:boolean;
 }
